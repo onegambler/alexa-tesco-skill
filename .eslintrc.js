@@ -4,6 +4,7 @@ module.exports = {
         'sourceType': 'script'
     },
     'env': {
+        'es6': true,
         'node': true,
         'mocha': true
     },
@@ -48,6 +49,7 @@ module.exports = {
                 'allowAfterSuper': true
             }
         ],
-        'no-unused-vars': ['warn', { 'vars': 'all', 'args': 'after-used' }]
+        'no-unused-vars': ['warn', {'vars': 'all', 'args': 'after-used'}],
+        'prefer-arrow-callback': ['warn', {'allowNamedFunctions': true}]
     }
 };
