@@ -44,7 +44,7 @@ gulp.task('deploy', callback => runSequence(
 
 gulp.task('js', () => {
     gulp.src('index.js').pipe(gulp.dest('dist/'));
-    return gulp.src('lib/*').pipe(gulp.dest('dist/lib'));
+    return gulp.src('lib/**').pipe(gulp.dest('dist/lib'));
 });
 
 // TODO: Make this env production/develop/test config files

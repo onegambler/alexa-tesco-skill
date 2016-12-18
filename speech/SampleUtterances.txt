@@ -1,3 +1,4 @@
+AddItem add {quantity} {item}
 AddItem add {item}
 AddItem to add {item}
 AddItem add {item} to the basket
