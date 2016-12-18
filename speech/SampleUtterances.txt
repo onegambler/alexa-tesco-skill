@@ -1,2 +1,2 @@
-AddItem add {item} to the shopping list
-AddItem add {quantity} {item} to the shopping list
+AddItem add {item}
+AddItem add {quantity} {item}
