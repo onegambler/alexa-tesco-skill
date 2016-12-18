@@ -1,0 +1,48 @@
+{
+  "name": "alexa-tesco-skill",
+  "version": "1.0.0",
+  "description": "Amazon Echo Skill which integrates with IFTTT Tesco applets",
+  "main": "index.js",
+  "author": "Roberto Magale",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/onegambler/alexa-tesco-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/onegambler/alexa-tesco-skill/issues"
+  },
+  "alexa": {
+    "applicationId": "xxx"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.2.26",
+    "bluebird": "^2.10.2",
+    "js-combinatorics": "^0.5.0",
+    "node-uuid": "^1.4.7",
+    "numbered": "^1.0.0",
+    "request-promise": "^1.0.2"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.2.0",
+    "del": "^2.2.0",
+    "eslint": "3.5.0",
+    "eslint-config-airbnb-base": "7.1.0",
+    "eslint-plugin-import": "1.16.0",
+    "fs": "0.0.2",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-help": "^1.6.1",
+    "gulp-install": "^0.6.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-shell": "^0.5.1",
+    "gulp-util": "^3.0.7",
+    "gulp-zip": "^3.0.2",
+    "jshint": "^2.9.4",
+    "mocha": "^2.3.4",
+    "node-aws-lambda": "^0.1.7",
+    "run-sequence": "^1.1.5"
+  }
+}
