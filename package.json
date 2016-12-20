@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "async": "^2.1.4",
+    "fuse": "^0.4.0",
+    "fuse.js": "^2.6.1",
     "request": "2.79.0"
   },
   "devDependencies": {

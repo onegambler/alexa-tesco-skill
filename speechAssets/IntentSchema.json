@@ -1,0 +1,29 @@
+{
+    "intents": [
+        {
+            "intent": "AddItem",
+            "slots": [
+                {
+                    "name": "item",
+                    "type": "GROCERY"
+                },
+                {
+                    "name": "quantity",
+                    "type": "AMAZON.NUMBER"
+                }
+            ]
+        },
+        {
+            "intent": "AMAZON.HelpIntent"
+        },
+        {
+            "intent": "AMAZON.StopIntent"
+        },
+        {
+            "intent": "AMAZON.YesIntent"
+        },
+        {
+            "intent": "AMAZON.NoIntent"
+        }
+    ]
+}
