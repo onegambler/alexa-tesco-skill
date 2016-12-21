@@ -49,7 +49,21 @@ module.exports = {
                 'allowAfterSuper': true
             }
         ],
-        'no-unused-vars': ['warn', {'vars': 'all', 'args': 'after-used'}],
-        'prefer-arrow-callback': ['warn', {'allowNamedFunctions': true}]
+        'no-unused-vars': [
+            'warn', {
+                'vars': 'all',
+                'args': 'after-used'
+            }
+        ],
+        'prefer-arrow-callback': [
+            'warn', {
+                'allowNamedFunctions': true
+            }
+        ],
+        'no-param-reassign': [
+            'error', {
+                'props': false
+            }
+        ]
     }
 };
