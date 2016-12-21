@@ -14,6 +14,24 @@
             ]
         },
         {
+            "intent": "AddSomeItem",
+            "slots": [
+                {
+                    "name": "item",
+                    "type": "GROCERY"
+                }
+            ]
+        },
+        {
+            "intent": "QuantityNumber",
+            "slots": [
+                {
+                    "name": "quantity",
+                    "type": "AMAZON.NUMBER"
+                }
+            ]
+        },
+        {
             "intent": "AMAZON.HelpIntent"
         },
         {
