@@ -4,7 +4,7 @@ module.exports = {
     accessKeyId: '',  // optional
     secretAccessKey: '',  // optional
     sessionToken: '',  // optional
-    profile: '', // optional for loading AWS credientail from custom profile
+    profile: '', // optional for loading AWS credentials from custom profile
     region: 'eu-west-1',
     handler: 'index.handler',
     role: 'alexa',
