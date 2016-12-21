@@ -4,6 +4,7 @@ AddItem to add {item}
 AddItem add {item} to the basket
 AddItem add {item} times {quantity} to the basket
 AddSomeItem add some {item}
+AddSomeItem add some {item} to the basket
 AddSomeItem to add some {item}
 AddSomeItem to add some {item} to the basket
 QuantityNumber {quantity}
