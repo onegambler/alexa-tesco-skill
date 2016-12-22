@@ -12,18 +12,18 @@
   "bugs": {
     "url": "https://github.com/onegambler/alexa-tesco-skill/issues"
   },
-  "alexa": {
-    "applicationId": "xxx"
+  "scripts": {
+    "test": "mocha test/ --recursive",
+    "test:watch": "npm run test -- -w",
+    "coverage": "istanbul cover _mocha test/*"
   },
   "dependencies": {
     "async": "^2.1.4",
-    "fuse": "^0.4.0",
     "fuse.js": "^2.6.1",
     "request": "2.79.0"
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "chai-as-promised": "^5.2.0",
     "del": "^2.2.0",
     "eslint": "3.5.0",
     "eslint-config-airbnb-base": "7.1.0",
@@ -33,14 +33,15 @@
     "gulp-eslint": "^3.0.1",
     "gulp-help": "^1.6.1",
     "gulp-install": "^0.6.0",
-    "gulp-jshint": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-shell": "^0.5.1",
     "gulp-util": "^3.0.7",
     "gulp-zip": "^3.0.2",
-    "jshint": "^2.9.4",
+    "istanbul": "^0.4.5",
     "mocha": "^2.3.4",
     "node-aws-lambda": "^0.1.7",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.1.5",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0"
   }
 }

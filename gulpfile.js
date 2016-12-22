@@ -13,7 +13,7 @@ const config = require('./config/lambda-config');
 
 const filePaths = {
     lintFiles: ['index.js', 'gulpfile.js', './lib/**/*.js', './config/**/*.js', './test/**/*.js'],
-    unitTestFiles: ['**/*.js', 'test/**/*']
+    unitTestFiles: ['test/**/*.js']
 };
 
 gulp.task('clean', () => del(['./dist', './dist.zip']));
@@ -23,7 +23,7 @@ gulp.task('lint', () => gulp.src(filePaths.lintFiles)
     .pipe(eslint.format())
     .pipe(eslint.failAfterError()));
 
-gulp.task('test', shell.task('mocha -c'));
+gulp.task('test', shell.task('mocha -c --recursive'));
 
 gulp.task('build', callback => runSequence(
     'clean',
@@ -70,7 +70,7 @@ gulp.task('zip', () => gulp.src(['dist/**/*', '!package.json'])
     .pipe(gulp.dest('./'))
 );
 
-gulp.task('watch-test', () => gulp.watch(filePaths.unitTestFiles, ['test-local']));
+gulp.task('watch-test', () => gulp.watch(filePaths.unitTestFiles, ['test']));
 
 gulp.task('watch-lint', () => {
     gulp.watch(filePaths.lintFiles).on('change', (file) => {
