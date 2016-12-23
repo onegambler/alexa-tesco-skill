@@ -47,10 +47,12 @@ Let's keep this somewhere as we will need to use it later.
 More detailed instructions can be found at the following: [Steps to Create a Smart Home Skill](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/steps-to-create-a-smart-home-skill)
 Plase note, from the documentation:
 > "Make sure you’ve selected the N.Virginia for English (US) skills or the EU (Ireland) region for English (UK) and German skills. The region is displayed in the upper right corner. Providing your Lambda function in the correct region prevents latency issues" 
+
 ### Amazon Lambda
 An [AWS account](https://aws.amazon.com/): needed to deploy the code to Lambda, which will process the requests. The first 1,000,000 requests/month are free, so more than enough to not spend a penny.
 https://ifttt.com/applets/45769228d
 For a detailed explanation on how to 
+
 ### Building and deploying
 Install node version 6
 Install gulp globally
