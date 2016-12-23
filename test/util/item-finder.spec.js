@@ -18,7 +18,7 @@ function createAddItemIntent(item) {
     };
 }
 
-describe('Fuzzy search util', () => {
+describe('Item finder util', () => {
     beforeEach(() => {
         this.getItemIdentifier = sinon.stub();
         this.itemRepository = {
@@ -33,7 +33,7 @@ describe('Fuzzy search util', () => {
     afterEach(() => {
         this.emitSpy.restore();
     });
-    it('should emit "found" if item is mapped to an existing itemId', (done) => {
+    it('should emit "found" if item is mapped to an existing ITEM_ID', (done) => {
         this.getItemIdentifier.withArgs('banana').returns('234');
         this.itemFinder.process(createAddItemIntent('banana'));
         expect(this.emitSpy).to.have.been.calledOnce.calledWith('found',
