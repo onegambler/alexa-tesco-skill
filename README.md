@@ -22,8 +22,14 @@ Tesco doesn't provide public APIs for adding products to the grocery basket, but
 
 * Click on `My Applets` and then `New applet`
 * Click on the blue `this` and search for `Maker`. 
-    * Give permission to the service and then `Receive a web request`
+    * Give permission to the service by clicking on `Connect` and then on `Receive a web request`
     * As `Event Name` set `tesco_item`
+    * And click on `create trigger`
+* Click now on the blue `that` and search for `Tesco`
+    * Give permission to the service by clicking on `Connect`and then on `Add product to your basket`
+    * Click then on `Ingredients` and add `Value1` as `ProductId`
+    * Finally click on `Create action` and then `Finish` 
+
 At the end you should have an applet that looks like this:
 
 <p align="center">
