@@ -41,5 +41,11 @@ describe('Message builder', () => {
         expect(message).to.deep.equal(`Item ${item} was not found. Please set up a mapping`);
         done();
     });
+
+    it('should properly build wrong request message', (done) => {
+        const message = messageBuilder.buildWrongRequestMessage();
+        expect(message).to.deep.equal('I am not sure what you mean by that');
+        done();
+    });
 });
 
