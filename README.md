@@ -25,7 +25,7 @@ Tesco doesn't provide public APIs for adding products to the grocery basket, but
     * Give permission to the service and then `Receive a web request`
     * As `Event Name` set `tesco_item`
 At the end you should have an applet that looks like this:
-![image][https://cloud.githubusercontent.com/assets/9900050/21463243/143ab56e-c95e-11e6-80f9-d6391bc62e66.png]
+![image](https://cloud.githubusercontent.com/assets/9900050/21463243/143ab56e-c95e-11e6-80f9-d6391bc62e66.png)
 Once you have created the Applet, we need to copy the Maker URL. So navigate to the Maker webpage, [here](https://ifttt.com/maker), click on Settings and you will see the account info. Something like this:
 ```
 Account Info
