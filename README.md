@@ -38,9 +38,9 @@ URL https://maker.ifttt.com/use/<KEY>
 Status active
 ```
 Copy the <key> value and paste at the end of the Maker endpoint
-
-```https://maker.ifttt.com/trigger/tesco_item/with/key/<KEY>```
-
+```
+https://maker.ifttt.com/trigger/tesco_item/with/key/<KEY>
+```
 Let's keep this somewhere as we will need to use it later.
 
 ### Skill Setup
