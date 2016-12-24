@@ -68,12 +68,46 @@ Here's a useful link to set up a Lambda for an Alexa Skill, follow the _Creating
 * https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-lambda-function
 
 In order to work properly Lambda needs some environment variables, in the `general` tab let's add these variables:
-* _APP_ID_: It's the lambda identification string, it's not a mandatory parameter, but it makes a little bit more secure making your lambda only accepting reqests from your specific skill. It can be found in the Alexa Skill set up page.
+* _APP_ID_: It's the lambda identification string, it's not a mandatory parameter, but it makes a little bit more secure by making your lambda only accept requests from your specific skill. It can be found in the Alexa Skill set up page.
 * _TRIGGER_URL_: It's the IFTTT url we have saved before
 
 ### Skill Setup
 Once you've setup your lambda, you'll need an Amazon developer account and start creating a new Alexa skill.
+1. Tab `Skill Information` 
+    * Add `Name` and `Invocation Name`. Be aware that the second is the name you are going to use to activate the skill. I use `Tesco`, so I can say `Alexa ask Tesco..` but it's completely up to you.
+    * Click no on `Audio Player`
+2. Tab `Interaction Model`
+    * Paste the `speechAssets/IntentSchema.json` file into the `Intent Schema` field
+    * Paste the `speechAssets/SampleUtterances.txt`. file in the `Sample Utterances` field.
+    * Create a `Custom Slot Type` called `GROCERY` and add the content of the file `speechAsset/slot-types/GROCERY`. More info about custom slots can be found [here](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/defining-the-voice-interface#custom-slot-types). The list is not comprehensive and you should personalised with items you use. To make it clearer, this is what Alexa will understand. So if there's no `milk` in the list, it would be harder to be understood. Ideally you want a mapping 1 to 1 with the mapping in the file `item-repository.js` (explained later).
+3. Tab `Configuration`
+    * Set `AWS Lambda ARN` as `Service Endpoint Type`, select the correct geographic region (same as Lambda) and insert the Lambda ARN in the input field.
+4. Skip other tabs and click on `Save`
+
 More detailed instructions can be found at the following: [Steps to Create a Smart Home Skill](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/steps-to-create-a-smart-home-skill)
+
+### Customising the products
+Now what we need to do is tell the skill which product we want to add to the basket when we say `milk`!
+So, in the project open `lib/repository/item-repository.js`. The file contains a mapping between an item and Tesco Item Id (IFTTT accepts only ids). This needs to be personalised according to your shopping. In order to do so, go to the Tesco Groceries web page and start getting all the item ids for the products you usually buy.
+In each product page you can find the id in the url
+
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/9900050/21467441/f19ceb16-c9e5-11e6-96fe-c501691e832e.png" alt="Applet image"/>
+</p>
+
+````
+http://www.tesco.com/groceries/product/details/?id=264245536
+````
+In this case *264245536* and then add it to the `item-repository` list.
+
+```javascript
+const items = {
+    banana: '275280804',
+    'cherry tomatoes': '285212132',
+    halloumi : '264245536'
+};
+```
+If the product is a compound word, like `cherry tomatoes` you can defined them surrounded by apostrophe. Once products are mapped, you can save and move to the next step.
 
 ### Building and deploying
 Install node version 6 with npm, if you haven't done it already, and make sure it works properly.
