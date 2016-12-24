@@ -48,7 +48,7 @@ Connected as ...
 URL https://maker.ifttt.com/use/<KEY>
 Status active
 ```
-Copy the <key> value and paste at the end of the Maker endpoint:
+Copy the `<KEY>` value and paste at the end of the Maker endpoint:
 ```
 https://maker.ifttt.com/trigger/tesco_item/with/key/<KEY>
 ```
