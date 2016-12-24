@@ -84,6 +84,8 @@ In order to work properly Lambda needs some environment variables, in the `gener
 * _APP_ID_: It's the lambda identification string, it's not a mandatory parameter, but it makes a little bit more secure by making your lambda only accept requests from your specific skill. It can be found in the Alexa Skill set up page.
 * _TRIGGER_URL_: It's the IFTTT url we have saved before
 
+Remember to save the Lambda ARN value, found in the top right corner of the dialog, we will need it later.
+
 ### Skill Setup
 Once you've setup your lambda, you'll need an Amazon developer account and start creating a new Alexa skill.
 
@@ -99,7 +101,7 @@ Once you've setup your lambda, you'll need an Amazon developer account and start
 3. Tab `Configuration`
     * Set `AWS Lambda ARN` as `Service Endpoint Type`, select the correct geographic region (same as Lambda) and insert the Lambda ARN in the input field.
 
-4. Skip other tabs and click on `Save`
+4. Ignore other tabs (we don't want to publish the skill) and click on `Save`
 
 More detailed instructions can be found at the following: [Steps to Create a Smart Home Skill](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/steps-to-create-a-smart-home-skill)
 
@@ -151,6 +153,6 @@ gulp build
 If everything went ok, you should now see a `dist` folder containing a `dist.zip` file.
 
 #Putting all together
-Ok, so; as last step we need to deploy the file into AWS Lambda. The project comes with `node-aws-lambda` a node utility used for Lambda's deployment. You can read more about it [here](https://www.npmjs.com/package/node-aws-lambda).
+Ok, almost there. As last step we need to deploy the file into AWS Lambda. The project comes with `node-aws-lambda`; a node utility used for Lambda's deployment. You can read more about it [here](https://www.npmjs.com/package/node-aws-lambda).
 I honestly prefer to do it manually so I don't have to deal with access keys and tokens; so let's go back to the newly created lambda - on the AWS console page - and let's upload the `dist.zip` file.
-Then click on `save` and we should be ready to go. Try with one of your products and see if it works!
+Then click on `save` and we should be ready to go. Try to add some milk and see if it works!
