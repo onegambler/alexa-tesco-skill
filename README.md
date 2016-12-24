@@ -2,10 +2,10 @@
 
 ##Description
 Alexa Skill integration with Tesco. It allows to voice control the shopping on [Tesco Groceries](http://www.tesco.com/groceries/).
-It's possible to add products to the grocery basked by only using the voice.
+It's possible to add products to the grocery basket by only using the voice.
 
 ##Features
-At the moment it only allows to add a product to the basked
+At the moment it only allows to add a product to the basket
 * Add one item to the Tesco Groceries basket
     * Alexa ask Tesco to add milk to the basket
     * Alexa ask Tesco to add milk
@@ -100,5 +100,6 @@ gulp build
 If everything went ok, you should now see a `dist` folder containing a `dist.zip` file.
 
 #Putting all together
-Ok, so. Let's go back to the newly created lambda - on the AWS console page - and let's upload the `dist.zip` file.
+Ok, so; as last step we need to deploy the file into AWS Lambda. The project comes with `node-aws-lambda` a node utility used for Lambda's deployment. You can read more about it [here](https://www.npmjs.com/package/node-aws-lambda).
+I honestly prefer to do it manually so I don't have to deal with access keys and tokens; so let's go back to the newly created lambda - on the AWS console page - and let's upload the `dist.zip` file.
 Then click on `save` and we should be ready to go. Try with one of your products and see if it works!
