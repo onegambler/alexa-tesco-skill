@@ -16,17 +16,23 @@ At the moment it only allows to add a product to the basket
 ##Requirements
 * [NodeJs 6](https://nodejs.org/en/download/) and npm
 * An Amazon Echo/Dot
-* An Amazon developer account
+* [An Amazon developer account](https://developer.amazon.com/)
 * A [Tesco Groceries](http://www.tesco.com/groceries/) account
 * A [IFTTT](https://ifttt.com) account
-* A server to process the requests coming from the Echo. In this guide I will use AWS Lambda
+* A server to process the requests coming from the Echo. In this guide I will use AWS Lambda, so we need als [an Amazon AWS accout](https://aws.amazon.com)
+
+##High level integration
+
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/9900050/21467742/fb421984-c9ef-11e6-83b1-bf04210907b2.png" alt="Applet image"/>
+</p>
 
 ##Installation
 
 Ok, let's set everything up.
 
 ###IFTTT
-Tesco doesn't provide public APIs for adding products to the grocery basket, but an alternative exists. IFTTT integrates with Tesco and it does allow the functionality. So, we just need to create an account with IFTTT (if you don't have one) and create the following applet:
+Tesco doesn't provide public APIs for adding products to the grocery basket; luckily IFTTT has a Tesco integration which provide exactly what we are looking for. So, let's create an account with IFTTT (if you don't have one) and add an applet to do the job:
 
 * Click on `My Applets` and then `New applet`
 * Click on the blue `this` and search for `Maker`. 
@@ -58,9 +64,9 @@ https://maker.ifttt.com/trigger/tesco_item/with/key/<KEY>
 Let's keep this somewhere as we will need to use it later.
 
 ### Amazon Lambda
-As mentioned before we are going to need an [AWS account](https://aws.amazon.com/). We will needed to deploy the code to Lambda, which will process the requests. The first 1,000,000 requests/month are free, so more than enough to not spend a penny.
+As mentioned before we need an [AWS account](https://aws.amazon.com/) as we will deploy the code to AWS Lambda, which will process the requests. The first 1,000,000 requests/month are free, so more than enough to not spend a penny.
 
-There's plenty of tutorials on how to set it up, so I won't get into details. 
+There's plenty of tutorials, so I won't get into details. 
 
 *Before setting it up, please note!*
 > "Make sure you’ve selected the N.Virginia for English (US) skills or the EU (Ireland) region for English (UK) and German skills. The region is displayed in the upper right corner. Providing your Lambda function in the correct region prevents latency issues" 
@@ -87,7 +93,7 @@ In order to work properly Lambda needs some environment variables, in the `gener
 Remember to save the Lambda ARN value, found in the top right corner of the dialog, we will need it later.
 
 ### Skill Setup
-Once you've setup your lambda, you'll need an Amazon developer account and start creating a new Alexa skill.
+Once you've setup your lambda, you'll need an Amazon developer account to create a new Alexa skill.
 
 1. Tab `Skill Information` 
     * Add `Name` and `Invocation Name`. Be aware that the second is the name you are going to use to activate the skill. I use `Tesco`, so I can say "Alexa ask Tesco.." but it's completely up to you.
