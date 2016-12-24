@@ -6,9 +6,12 @@ It's possible to add products to the grocery basked by only using the voice.
 
 ##Features
 It supports only one feature at the moment, add a product to the basked
-* Alexa ask Tesco to add milk to the basked
-* Alexa ask Tesco to add milk
-* Alexa ask Tesco to add some milk
+* Add one item to the Tesco Groceries basket
+    * Alexa ask Tesco to add milk to the basket
+    * Alexa ask Tesco to add milk
+* Add multiple items to the Tesco Groceries basket
+    * Alexa ask Tesco to add milk times three
+    * Alexa ask Tesco to add some milk -> It will prompt you with a question on how many.
 
 ##Requirements
 * [NodeJs 6](https://nodejs.org/en/download/) and npm
@@ -95,3 +98,5 @@ gulp build
 If everything went ok, you should now see a `dist` folder containing a `dist.zip` file.
 
 #Putting all together
+Ok, so. Let's go back to the newly created lambda - on the AWS console page - and let's upload the `dist.zip` file.
+Then click on `save` and we should be ready to go. Try with one of your products and see if it works!
