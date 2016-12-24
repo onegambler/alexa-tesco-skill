@@ -29,7 +29,7 @@ gulp.task('build', callback => runSequence(
     'clean',
     'lint',
     'test',
-    ['js', 'assets', 'config', 'vendor', 'node-mods'],
+    ['js', 'assets', 'config', 'node-mods'],
     'zip',
     callback)
 );
