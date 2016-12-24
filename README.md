@@ -73,15 +73,19 @@ In order to work properly Lambda needs some environment variables, in the `gener
 
 ### Skill Setup
 Once you've setup your lambda, you'll need an Amazon developer account and start creating a new Alexa skill.
+
 1. Tab `Skill Information` 
     * Add `Name` and `Invocation Name`. Be aware that the second is the name you are going to use to activate the skill. I use `Tesco`, so I can say `Alexa ask Tesco..` but it's completely up to you.
     * Click no on `Audio Player`
+    
 2. Tab `Interaction Model`
     * Paste the `speechAssets/IntentSchema.json` file into the `Intent Schema` field
     * Paste the `speechAssets/SampleUtterances.txt`. file in the `Sample Utterances` field.
     * Create a `Custom Slot Type` called `GROCERY` and add the content of the file `speechAsset/slot-types/GROCERY`. More info about custom slots can be found [here](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/defining-the-voice-interface#custom-slot-types). The list is not comprehensive and you should personalised with items you use. To make it clearer, this is what Alexa will understand. So if there's no `milk` in the list, it would be harder to be understood. Ideally you want a mapping 1 to 1 with the mapping in the file `item-repository.js` (explained later).
+
 3. Tab `Configuration`
     * Set `AWS Lambda ARN` as `Service Endpoint Type`, select the correct geographic region (same as Lambda) and insert the Lambda ARN in the input field.
+
 4. Skip other tabs and click on `Save`
 
 More detailed instructions can be found at the following: [Steps to Create a Smart Home Skill](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/steps-to-create-a-smart-home-skill)
