@@ -5,7 +5,7 @@ Alexa Skill integration with Tesco. It allows to voice control the shopping on [
 It's possible to add products to the grocery basked by only using the voice.
 
 ##Features
-It supports only one feature at the moment, add a product to the basked
+At the moment it only allows to add a product to the basked
 * Add one item to the Tesco Groceries basket
     * Alexa ask Tesco to add milk to the basket
     * Alexa ask Tesco to add milk
@@ -67,11 +67,13 @@ There's plenty of tutorials on how to set it up, so I won't get into details.
 Here's a useful link to set up a Lambda for an Alexa Skill, follow the _Creating a Lambda Function for an Alexa Skill_ paragraph:
 * https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-lambda-function
 
+In order to work properly Lambda needs some environment variables, in the `general` tab let's add these variables:
+* _APP_ID_: It's the lambda identification string, it's not a mandatory parameter, but it makes a little bit more secure making your lambda only accepting reqests from your specific skill. It can be found in the Alexa Skill set up page.
+* _TRIGGER_URL_: It's the IFTTT url we have saved before
+
 ### Skill Setup
 Once you've setup your lambda, you'll need an Amazon developer account and start creating a new Alexa skill.
 More detailed instructions can be found at the following: [Steps to Create a Smart Home Skill](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/steps-to-create-a-smart-home-skill)
-Plase note, from the documentation:
-
 
 ### Building and deploying
 Install node version 6 with npm, if you haven't done it already, and make sure it works properly.
