@@ -61,13 +61,26 @@ Let's keep this somewhere as we will need to use it later.
 As mentioned before we are going to need an [AWS account](https://aws.amazon.com/). We will needed to deploy the code to Lambda, which will process the requests. The first 1,000,000 requests/month are free, so more than enough to not spend a penny.
 
 There's plenty of tutorials on how to set it up, so I won't get into details. 
+
 *Before setting it up, please note!*
 > "Make sure you’ve selected the N.Virginia for English (US) skills or the EU (Ireland) region for English (UK) and German skills. The region is displayed in the upper right corner. Providing your Lambda function in the correct region prevents latency issues" 
 
 Here's a useful link to set up a Lambda for an Alexa Skill, follow the _Creating a Lambda Function for an Alexa Skill_ paragraph:
 * https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-lambda-function
 
-In order to work properly Lambda needs some environment variables, in the `general` tab let's add these variables:
+Notes
+* create the lambda as `Blank Function`
+* configure a `Alexa Skills Kit` as trigger 
+* Use Node.js 4.3 as runtime environment
+* Set `index.handler` as Handler
+
+So something like this
+
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/9900050/21467577/7d891f1a-c9ea-11e6-9205-e9437916ed6a.png" alt="Applet image"/>
+</p>
+
+In order to work properly Lambda needs some environment variables, in the `general` tab let's add:
 * _APP_ID_: It's the lambda identification string, it's not a mandatory parameter, but it makes a little bit more secure by making your lambda only accept requests from your specific skill. It can be found in the Alexa Skill set up page.
 * _TRIGGER_URL_: It's the IFTTT url we have saved before
 
@@ -75,7 +88,7 @@ In order to work properly Lambda needs some environment variables, in the `gener
 Once you've setup your lambda, you'll need an Amazon developer account and start creating a new Alexa skill.
 
 1. Tab `Skill Information` 
-    * Add `Name` and `Invocation Name`. Be aware that the second is the name you are going to use to activate the skill. I use `Tesco`, so I can say `Alexa ask Tesco..` but it's completely up to you.
+    * Add `Name` and `Invocation Name`. Be aware that the second is the name you are going to use to activate the skill. I use `Tesco`, so I can say "Alexa ask Tesco.." but it's completely up to you.
     * Click no on `Audio Player`
     
 2. Tab `Interaction Model`
