@@ -55,12 +55,14 @@ https://maker.ifttt.com/trigger/tesco_item/with/key/<KEY>
 Let's keep this somewhere as we will need to use it later.
 
 ### Amazon Lambda
-An [AWS account](https://aws.amazon.com/): needed to deploy the code to Lambda, which will process the requests. The first 1,000,000 requests/month are free, so more than enough to not spend a penny.
-https://ifttt.com/applets/45769228d
+As mentioned before we are going to need an [AWS account](https://aws.amazon.com/). We will needed to deploy the code to Lambda, which will process the requests. The first 1,000,000 requests/month are free, so more than enough to not spend a penny.
 
+There's plenty of tutorials on how to set it up, so I won't get into details. 
+*Before setting it up, please note!*
 > "Make sure you’ve selected the N.Virginia for English (US) skills or the EU (Ireland) region for English (UK) and German skills. The region is displayed in the upper right corner. Providing your Lambda function in the correct region prevents latency issues" 
 
-For a detailed explanation on how to 
+Here's a useful link to set up a Lambda for an Alexa Skill, follow the _Creating a Lambda Function for an Alexa Skill_ paragraph:
+* https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-lambda-function
 
 ### Skill Setup
 Once you've setup your lambda, you'll need an Amazon developer account and start creating a new Alexa skill.
@@ -74,7 +76,7 @@ Clone this project:
 ```
 git clone https://github.com/onegambler/alexa-tesco-skill.git
 ```
-and cd alexa-tesco-skill.
+and `cd` into the folder alexa-tesco-skill.
 
 Then run 
 ```
