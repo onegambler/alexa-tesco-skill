@@ -158,7 +158,11 @@ gulp build
 ```
 If everything went ok, you should now see a `dist` folder containing a `dist.zip` file.
 
-#Putting all together
+#Putting everything together
 Ok, almost there. As last step we need to deploy the file into AWS Lambda. The project comes with `node-aws-lambda`; a node utility used for Lambda's deployment. You can read more about it [here](https://www.npmjs.com/package/node-aws-lambda).
 I honestly prefer to do it manually so I don't have to deal with access keys and tokens; so let's go back to the newly created lambda - on the AWS console page - and let's upload the `dist.zip` file.
 Then click on `save` and we should be ready to go. Try to add some milk and see if it works!
+
+#Issues
+Here's are some issues you might face using the skill
+* The item mapped is not available anymore: Unfortunately I haven't found a way yet to know if an item becomes unavailable for a specific Tesco branch. IFTTT doesn't respond with errors in that case, so Alexa will say that everything went ok, but the product won't be added to the basket. In my experience this happens mostly with seasonal fruit and vegetables; it hasn't been a big issue for me, but I'm still investigating on a workaround.
