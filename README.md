@@ -29,7 +29,10 @@ At the moment it only allows to add a product to the basket
 
 ##Installation
 
-Ok, let's set everything up.
+Ok let's start by cloning this project: 
+```
+git clone https://github.com/onegambler/alexa-tesco-skill.git
+```
 
 ###IFTTT
 Tesco doesn't provide public APIs for adding products to the grocery basket; luckily IFTTT has a Tesco integration which provide exactly what we are looking for. So, let's create an account with IFTTT (if you don't have one) and add an applet to do the job:
@@ -92,13 +95,8 @@ Once products are mapped, you can save and move to the next step.
 
 ### Building the skill
 Install node version 6 with npm, if you haven't done it already, and make sure it works properly.
-Clone this project: 
-```
-git clone https://github.com/onegambler/alexa-tesco-skill.git
-```
-and `cd` into the folder alexa-tesco-skill.
 
-Then run 
+First of all `cd` into the folder alexa-tesco-skill, then run 
 ```
 npm install
 ```
