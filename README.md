@@ -96,7 +96,7 @@ Once products are mapped, you can save and move to the next step.
 ### Building the skill
 Install node version 6 with npm, if you haven't done it already, and make sure it works properly.
 
-Then `cd` into the folder alexa-tesco-skill, then run 
+Then `cd` into the folder alexa-tesco-skill and run 
 ```
 npm install
 ```
