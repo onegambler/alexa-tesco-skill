@@ -100,9 +100,9 @@ Then `cd` into the folder alexa-tesco-skill and run
 ```
 npm install
 ```
-to download all dependencies
+to download all dependencies.
 
-The project comes with some gulp scripts to make the build easy. So let's install it globally
+The project comes with some `gulp` scripts to make the build process seasy. So let's install it globally
 ```
 npm install -g gulp
 ```
@@ -135,14 +135,14 @@ So something like this
   <img src="https://cloud.githubusercontent.com/assets/9900050/21467577/7d891f1a-c9ea-11e6-9205-e9437916ed6a.png" alt="Applet image"/>
 </p>
 
-In order to work properly Lambda needs some environment variables, in the `general` tab let's add:
+In order to work properly Lambda needs some environment variables, in the `general` tab we need to add:
 * _APP_ID_: It's the lambda identification string, it's not a mandatory parameter, but it makes a little bit more secure by making your lambda only accept requests from your specific skill. It can be found in the Alexa Skill set up page.
 * _TRIGGER_URL_: It's the IFTTT url we have saved before
 
 Remember to save the Lambda ARN value, found in the top right corner of the dialog, we will need it later.
 
 ### Skill Setup
-Once you've setup your lambda, you'll need an Amazon developer account to create a new Alexa skill.
+Once you've setup your lambda, you'll need an [Amazon developer account](https://developer.amazon.com/) to create a new Alexa skill.
 
 1. Tab `Skill Information` 
     * Add `Name` and `Invocation Name`. Be aware that the second is the name you are going to use to activate the skill. I use `Tesco`, so I can say "Alexa ask Tesco.." but it's completely up to you.
