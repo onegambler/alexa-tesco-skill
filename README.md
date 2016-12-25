@@ -168,4 +168,4 @@ Then click on `save` and we should be ready to go. Try to add some milk and see 
 
 #Issues
 Here's are some issues you might face using the skill
-* *The item mapped is not available anymore*: Unfortunately I haven't found a way yet to know if an item becomes unavailable for a specific Tesco branch. IFTTT doesn't respond with errors in that case, so Alexa will say that everything went ok, but the product won't be added to the basket. Tesco too doesn't provide APIs to get this kind of info. In my experience this happens mostly with seasonal fruit and vegetables; it hasn't been a big issue for me, but I'm still investigating on a workaround.
+* *The item mapped is not available anymore*: Unfortunately I haven't found a way yet to know if an item becomes unavailable for a specific Tesco branch. IFTTT doesn't respond with errors in that case, so Alexa will say that everything went ok,even if the product is not added to the basket. Tesco as well doesn't provide APIs to get this kind of info. In my experience this happens mostly with seasonal fruit and vegetables and  it hasn't been a big issue for me so far. I'm still looking for a workaround.
