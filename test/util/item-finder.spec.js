@@ -33,7 +33,7 @@ describe('Item finder util', () => {
     afterEach(() => {
         this.emitSpy.restore();
     });
-    it('should emit "found" if item is mapped to an existing ITEM_ID', (done) => {
+    it('should emit "found" if item is mapped to an existing SKILL_ID', (done) => {
         this.getItemIdentifier.withArgs('banana').returns('234');
         this.itemFinder.process(createAddItemIntent('banana'));
         expect(this.emitSpy).to.have.been.calledOnce.calledWith('found',
