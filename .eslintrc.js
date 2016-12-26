@@ -63,11 +63,11 @@ module.exports = {
             'warn', {
                 'allowNamedFunctions': true
             }
-        ],
-        'no-param-reassign': [
-            'error', {
-                'props': false
-            }
-        ]
+        ]//,
+        // 'no-param-reassign': [
+        //     'error', {
+        //         'props': false
+        //     }
+        // ]
     }
 };
