@@ -35,28 +35,28 @@ describe('Item finder util', () => {
     });
     it('should emit "found" if item is mapped to an existing SKILL_ID', (done) => {
         this.getItemIdentifier.withArgs('banana').returns('234');
-        this.itemFinder.process(createAddItemIntent('banana'));
+        this.itemFinder.process(createAddItemIntent('banana').slots);
         expect(this.emitSpy).to.have.been.calledOnce.calledWith('found',
             { id: '234', value: 'banana', quantity: null });
         done();
     });
 
     it('should emit "not found" if item is null or undefined', (done) => {
-        this.itemFinder.process(createAddItemIntent(null));
+        this.itemFinder.process(createAddItemIntent(null).slots);
         expect(this.emitSpy).to.have.been.calledOnce.calledWith('notFound');
         done();
     });
 
     it('should emit "not found" if item is not mapped and fuzzy search does not find a match', (done) => {
         this.getItemIdentifier.withArgs('xxx').returns(null);
-        this.itemFinder.process(createAddItemIntent('xxx'));
+        this.itemFinder.process(createAddItemIntent('xxx').slots);
         expect(this.emitSpy).to.have.been.calledOnce.calledWith('notFound');
         done();
     });
 
     it('should emit "not found" if item is not mapped and fuzzy search does not find a match', (done) => {
         this.getItemIdentifier.withArgs('banana').returns('234');
-        this.itemFinder.process(createAddItemIntent('bannnnnnnnnnana'));
+        this.itemFinder.process(createAddItemIntent('bannnnnnnnnnana').slots);
         expect(this.emitSpy).to.have.been.calledOnce.calledWith('fuzzyFound',
             { id: '234', value: 'banana', quantity: null });
         done();

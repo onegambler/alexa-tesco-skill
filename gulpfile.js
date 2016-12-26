@@ -90,9 +90,7 @@ function parseProducts(json) {
     const dest = {};
     for (let i = 0; i < json.products.length; i++) {
         const product = json.products[i];
-        Object.keys(product)
-            .filter(key => Object.prototype.hasOwnProperty.call(product, key))
-            .forEach((key) => {
+        Object.keys(product).forEach((key) => {
                 dest[key] = product[key].id;
                 if (Array.isArray(product[key].aliases)) {
                     product[key].aliases.forEach((alias) => {
