@@ -30,9 +30,11 @@ describe('Item finder util', () => {
         this.itemFinder = new ItemFinder(this.itemRepository);
         this.emitSpy = sinon.spy(this.itemFinder, 'emit');
     });
+
     afterEach(() => {
         this.emitSpy.restore();
     });
+
     it('should emit "found" if item is mapped to an existing SKILL_ID', (done) => {
         this.getItemIdentifier.withArgs('banana').returns('234');
         this.itemFinder.process(createAddItemIntent('banana').slots);
