@@ -37,7 +37,7 @@ describe('Item finder util', () => {
         this.getItemIdentifier.withArgs('banana').returns('234');
         this.itemFinder.process(createAddItemIntent('banana'));
         expect(this.emitSpy).to.have.been.calledOnce.calledWith('found',
-            {id: '234', value: 'banana', quantity: null});
+            { id: '234', value: 'banana', quantity: null });
         done();
     });
 

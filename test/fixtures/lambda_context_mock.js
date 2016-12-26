@@ -1,8 +1,8 @@
 module.exports = {
-    succeed: function() {},
-    fail: function() {},
-    done: function() {},
-    getRemainingTimeInMillis: function() {},
+    succeed() {},
+    fail() {},
+    done() {},
+    getRemainingTimeInMillis() {},
 
     awsRequestId: undefined,
     logStreamName: undefined,

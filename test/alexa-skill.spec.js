@@ -72,7 +72,7 @@ describe('Initializing the abstract AlexaSkill class', () => {
 
     it('should correctly handle passed intent if handler exists', () => {
         const intentHandlerStub = sinon.stub(alexaSkill.eventHandlers, 'onIntent');
-        alexaSkill.intentHandlers['TestIntent'] = intentHandlerStub;
+        alexaSkill.intentHandlers.TestIntent = intentHandlerStub;
         alexaSkill.execute(ALEXA_INTENT, lambdaContext);
         expect(intentHandlerStub).to.have.been.calledOnce;
         intentHandlerStub.restore();
@@ -80,7 +80,6 @@ describe('Initializing the abstract AlexaSkill class', () => {
 });
 
 describe('Handling failures in the AlexaSkill class', () => {
-
     let context;
 
     beforeEach(() => {

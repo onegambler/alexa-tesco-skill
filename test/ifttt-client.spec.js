@@ -16,7 +16,7 @@ const URL = 'URL';
 describe('Item finder util', () => {
     beforeEach(() => {
         this.post = sinon.stub(request, 'post');
-        this.iftttClient = new IftttClient(URL, request)
+        this.iftttClient = new IftttClient(URL, request);
     });
 
     afterEach(() => {

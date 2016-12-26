@@ -7,7 +7,6 @@ const messageBuilder = require('../../lib/util/message-builder');
 
 
 describe('Message builder', () => {
-
     it('should build item  added to basket response with quantity if present', (done) => {
         const item = 'banana';
         const quantity = 3;
