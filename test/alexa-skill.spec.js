@@ -45,14 +45,14 @@ describe('Initializing the abstract AlexaSkill class', () => {
         alexaSkill.execute(ALEXA_START_SESSION, lambdaContext);
         expect(sessionStartedSpy).to.have.been.calledOnce.calledWith(
             ALEXA_START_SESSION.request, ALEXA_START_SESSION.session);
-        alexaSkill.eventHandlers.onSessionStarted.restore();
+        sessionStartedSpy.restore();
     });
 
     it('should not call the session started handler when the session exists', () => {
         const sessionStartedSpy = sinon.spy(alexaSkill.eventHandlers, 'onSessionStarted');
         alexaSkill.execute(ALEXA_END_SESSION, lambdaContext);
         expect(sessionStartedSpy).to.have.not.been.called;
-        alexaSkill.eventHandlers.onSessionStarted.restore();
+        sessionStartedSpy.restore();
     });
 
     it('should dynamically calls the correct handlers for a SessionEnded request', () => {
@@ -60,14 +60,14 @@ describe('Initializing the abstract AlexaSkill class', () => {
         alexaSkill.execute(ALEXA_END_SESSION, lambdaContext);
         expect(sessionEndSpy).to.have.been.calledOnce.calledWith(
             ALEXA_END_SESSION.request, ALEXA_END_SESSION.session);
-        alexaSkill.eventHandlers.onSessionEnded.restore();
+        sessionEndSpy.restore();
     });
 
     it('should throw exception for onLaunch request', () => {
         const onLaunchSpy = sinon.spy(alexaSkill.eventHandlers, 'onLaunch');
         alexaSkill.execute(ALEXA_INTENT, lambdaContext);
         expect(onLaunchSpy).to.have.not.been.called;
-        alexaSkill.eventHandlers.onLaunch.restore();
+        onLaunchSpy.restore();
     });
 
     it('should correctly handle passed intent if handler exists', () => {
@@ -75,7 +75,7 @@ describe('Initializing the abstract AlexaSkill class', () => {
         alexaSkill.intentHandlers['TestIntent'] = intentHandlerStub;
         alexaSkill.execute(ALEXA_INTENT, lambdaContext);
         expect(intentHandlerStub).to.have.been.calledOnce;
-        alexaSkill.eventHandlers.onIntent.restore();
+        intentHandlerStub.restore();
     });
 });
 
@@ -87,21 +87,26 @@ describe('Handling failures in the AlexaSkill class', () => {
         context = sinon.mock(lambdaContext);
     });
 
-    it('handles an application ID mismatch error', () => {
+    afterEach(() => {
+        context.restore();
+    });
+
+    it('should properly handle an application ID mismatch error', () => {
         const alexaSkill = new AlexaSkill('amzn1.echo-sdk-ams.app.wrong');
         context.expects('fail').once();
         alexaSkill.execute(ALEXA_START_SESSION, lambdaContext);
         context.verify();
     });
 
-    it('handles an intent handler not found error', () => {
+    it('should properly handle an intent handler not found error', () => {
         const alexaSkill = new AlexaSkill(SKILL_ID);
         context.expects('fail').once();
+        alexaSkill.intentHandlers = {};
         alexaSkill.execute(ALEXA_INTENT, lambdaContext);
         context.verify();
     });
 
-    it('handles an onLaunchEvent not found error', () => {
+    it('should properly handle an onLaunchEvent not found error', () => {
         const alexaSkill = new AlexaSkill(SKILL_ID);
         context.expects('fail').once();
         alexaSkill.execute(ALEXA_START_SESSION, lambdaContext);
