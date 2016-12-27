@@ -86,7 +86,14 @@ gulp.task('watch-lint', () => {
 
 gulp.task('watch', ['watch-lint', 'watch-test']);
 
-function parseProducts(json) {
+function parseProductsFile(file) {
+    if (file.isNull()) {
+        return cb(null, file);
+    }
+    if (file.isStream()) {
+        return cb(new Error('Streaming not supported'));
+    }
+    const json = yaml.load(String(file.contents.toString('utf8')));
     const dest = {};
     for (let i = 0; i < json.products.length; i++) {
         const product = json.products[i];
@@ -106,14 +113,7 @@ gulp.task('build-assets', () => {
     gulp.src('speechAssets/*').pipe(gulp.dest('dist/speechAssets'));
     gulp.src('products.yml')
         .pipe(map((file, cb) => {
-            if (file.isNull()) {
-                return cb(null, file);
-            }
-            if (file.isStream()) {
-                return cb(new Error('Streaming not supported'));
-            }
-            const json = yaml.load(String(file.contents.toString('utf8')));
-            const dest = parseProducts(json);
+            const dest = parseProductsFile(file);
             file.contents = new Buffer(JSON.stringify(dest, null, 4));
             return cb(null, file);
         }))
@@ -122,14 +122,7 @@ gulp.task('build-assets', () => {
 
     gulp.src('products.yml')
         .pipe(map((file, cb) => {
-            if (file.isNull()) {
-                return cb(null, file);
-            }
-            if (file.isStream()) {
-                return cb(new Error('Streaming not supported'));
-            }
-            const json = yaml.load(String(file.contents.toString('utf8')));
-            const dest = parseProducts(json);
+            const dest = parseProductsFile(file);
             file.contents = new Buffer(Object.keys(dest).join('\n'));
             return cb(null, file);
         }))
