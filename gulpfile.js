@@ -86,13 +86,9 @@ gulp.task('watch-lint', () => {
 
 gulp.task('watch', ['watch-lint', 'watch-test']);
 
-function parseProductsFile(file, callback) {
-    if (file.isNull()) {
-        return callback(null, file);
-    }
-    if (file.isStream()) {
-        return callback(new Error('Streaming not supported'));
-    }
+function parseProductsFile(file, contentExtractor, callback) {
+    if (file.isNull()) return callback(null, file);
+    if (file.isStream()) return callback(new Error('Streaming not supported'));
     const json = yaml.load(String(file.contents.toString('utf8')));
     const dest = {};
     for (let i = 0; i < json.products.length; i++) {
@@ -106,29 +102,24 @@ function parseProductsFile(file, callback) {
             }
         });
     }
-    return dest;
+    file.contents = new Buffer(contentExtractor(dest));
+    return callback(null, file);
 }
 
 gulp.task('build-assets', () => {
     gulp.src('speechAssets/*').pipe(gulp.dest('dist/speechAssets'));
     gulp.src('products.yml')
         .pipe(map((file, cb) => {
-            parseProductsFile(file, function callback(error, contents) {
-                if (error) return cb(error, null);
-                file.contents = new Buffer(JSON.stringify(contents, null, 4)); // eslint-disable-line no-param-reassign
-                return cb(null, file);
-            });
+            const contentExtractor = content => JSON.stringify(content, null, 4);
+            parseProductsFile(file, contentExtractor, cb);
         }))
         .pipe(rename('products.json'))
         .pipe(gulp.dest('dist/data'));
 
     gulp.src('products.yml')
         .pipe(map((file, cb) => {
-            parseProductsFile(file, function callback(error, contents) {
-                if (error) return cb(error, null);
-                file.contents = new Buffer(Object.keys(contents).join('\n')); // eslint-disable-line no-param-reassign
-                return cb(null, file);
-            });
+            const contentExtractor = content => Object.keys(content).join('\n');
+            parseProductsFile(file, contentExtractor, cb);
         }))
         .pipe(rename('GROCERIES'))
         .pipe(gulp.dest('dist/speechAssets/slot-types'));
