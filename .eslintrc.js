@@ -15,7 +15,8 @@ module.exports = {
     'rules': {
         'max-len': [
             'error',
-            120
+            120,
+            {'ignoreStrings': true}
         ],
         'indent': [
             'error',
@@ -63,11 +64,11 @@ module.exports = {
             'warn', {
                 'allowNamedFunctions': true
             }
-        ]//,
-        // 'no-param-reassign': [
-        //     'error', {
-        //         'props': false
-        //     }
-        // ]
+        ],
+        'no-param-reassign': [
+            'error', {
+                'props': false
+            }
+        ]
     }
 };

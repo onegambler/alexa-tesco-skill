@@ -1,3 +1,4 @@
+/* eslint no-unused-expressions: "off" */
 'use strict';
 
 const chai = require('chai');

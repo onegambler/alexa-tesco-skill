@@ -1,3 +1,5 @@
+/* eslint no-unused-expressions: "off" */
+
 'use strict';
 
 const chai = require('chai');
@@ -30,7 +32,7 @@ describe('Initializing the abstract AlexaSkill class', () => {
     });
 
     it('should properly build the object', (done) => {
-        expect(alexaSkill._appId).to.deep.equal(SKILL_ID);
+        expect(alexaSkill.appId).to.deep.equal(SKILL_ID);
         done();
     });
 

@@ -1,4 +1,5 @@
 /* eslint-disable quote-props */
+'use strict';
 
 exports.ALEXA_INTENT = {
     'session': {
