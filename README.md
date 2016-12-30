@@ -152,7 +152,7 @@ Once you've setup your lambda, you'll need an [Amazon developer account](https:/
     * Make sure you run the `gulp build` command since it will generate files from `products.yml` needed for the skill set up
     * Paste the `dist/speechAssets/IntentSchema.json` file into the `Intent Schema` field
     * Paste the `dist/speechAssets/SampleUtterances.txt`. file in the `Sample Utterances` field.
-    * Create a `Custom Slot Type` called `GROCERY` and add the content of the file `dist/speechAsset/slot-types/GROCERY`. More info about custom slots can be found [here](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/defining-the-voice-interface#custom-slot-types). The list is not comprehensive and you should personalised with items you use. To make it clearer, this is what Alexa will understand. So if there's no `milk` in the list, it would be harder to be understood. Ideally you want a mapping 1 to 1 with the mapping in the file `item-repository.js` (explained later).
+    * Create a `Custom Slot Type` called `GROCERY` and add the content of the file `dist/speechAsset/slot-types/GROCERY`. More info about custom slots can be found [here](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/defining-the-voice-interface#custom-slot-types).
 
 3. Tab `Configuration`
     * Set `AWS Lambda ARN` as `Service Endpoint Type`, select the correct geographic region (same as Lambda) and insert the Lambda ARN in the input field.
