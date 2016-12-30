@@ -15,7 +15,8 @@ module.exports = {
     'rules': {
         'max-len': [
             'error',
-            120
+            120,
+            {'ignoreStrings': true}
         ],
         'indent': [
             'error',
