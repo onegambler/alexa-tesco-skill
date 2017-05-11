@@ -1,9 +1,515 @@
 products:
+    - air freshener:
+        id:
+    - antihistamine:
+        id:
+    - aperol:
+        id:
+    - apples:
+        id:
+    - artichokes:
+        id:
+    - asparagus:
+        id:
+    - avocado:
+        id:
+        aliases:
+            - avocados
+    - bacon:
+        id:
+    - baking powder:
+        id:
+    - baking soda:
+        id:
     - banana:
         id: '275280804'
         aliases:
             - bananas
+    - basil:
+        id:
+    - basmati:
+        id: '251442449'
+        aliases:
+            - basmati rice
+    - bath soap:
+        id:
+    - bathroom cleaner:
+        id:
+    - batteries:
+        id:
+    - beef:
+        id:
+    - beer:
+        id:
+    - bin bags:
+        id: '256804968'
+    - black pepper:
+        id:
+    - bleach:
+        id:
+    - bleu cheese:
+        id:
+    - blueberries:
+        id:
+    - bread:
+        id: '279505857'
+    - bread crumbs:
+        id:
+    - broccoli:
+        id:
+    - buns:
+        id:
+    - butter:
+        id:
+    - butternut squash:
+        id:
+    - cake:
+        id:
+    - cake icing:
+        id:
+    - carrot:
+        id: '254638565'
+        aliases:
+            - carrots
+    - cauliflower:
+        id:
+    - celery:
+        id:
+    - cereal:
+        id:
+    - champagne:
+        id:
+    - cheddar:
+        id: '277925449'
+        aliases:
+            - cheese
+    - cherries:
+        id:
     - cherry tomatoes:
         id: '285212132'
+        aliases:
+            - cherry tomato
+    - chewing gum:
+        id:
+    - chicken:
+        id: '292285280'
+    - chocolate chips:
+        id:
+    - cilantro:
+        id:
+    - cinnamon:
+        id:
+    - club soda:
+        id:
+    - coconut milk:
+        id: '261626649'
+    - coconut:
+        id:
+    - coke:
+        id: '282843066'
+        aliases:
+            - coca cola
+    - coffee:
+        id:
+    - conditioner:
+        id:
+    - condoms:
+        id:
+    - cookies:
+        id:
+    - corn:
+        id:
+    - cottage cheese:
+        id:
+    - courgettes:
+        id:
+        aliases:
+            - courgette
+    - crackers:
+        id:
+    - cream cheese:
+        id:
+    - croissants:
+        id:
+    - cucumbers:
+        id:
+    - deodorant:
+        id:
+    - dishwasher powder:
+        id:
+    - dishwasher tablets:
+        id:
+    - donuts:
+        id:
+    - eggs:
+        id: '250802567'
+        aliases:
+            - egg
+    - feta:
+        id:
+    - fish fingers:
+        id: '268202034'
+        aliases:
+            - fish sticks
+    - floss:
+        id:
+    - flour:
+        id:
+    - freezer bags:
+        id:
+    - fresh bread:
+        id:
+    - fries:
+        id:
+    - fusilli:
+        id: '255343007'
+    - garlic:
+        id:
+    - gin:
+        id:
+    - ginger:
+        id:
+    - glass cleaner:
+        id:
+    - goat cheese:
+        id:
+    - granola bars:
+        id:
+    - grapefruit:
+        id:
+    - grapes:
+        id:
+    - gravy:
+        id:
+    - green curry:
+        id: '261105536'
+        aliases:
+            - thay green curry
+            - thai green curry paste
+            - green curry paste
+    - hair gel:
+        id:
+    - hair spray:
+        id:
+    - halloumi:
+        id:
+    - ham:
+        id:
+    - hand soap:
+        id:
+    - honey:
+        id:
+    - hot dogs:
+        id:
+    - hummus:
+        id:
+    - ibuprofen:
+        id:
+    - ice cream:
+        id:
+    - jam:
+        id:
+    - ketchup:
+        id:
+    - kitchen towels:
+        id:
+    - kiwi:
+        id:
+        aliases:
+            - kiwis
+    - lemon:
+        id:
+        aliases:
+            - lemons
+    - lettuce:
+        id:
+    - lime:
+        id:
+        aliases:
+            - limes
+    - lip balm:
+        id:
+    - mango:
+        id: '255805844'
+        aliases:
+            - mangoes
+    - margarine:
+        id:
+    - maris piper potatoes:
+        id: '258423755'
+    - mayonnaise:
+        id:
+    - melon:
+        id:
+        aliases:
+            - melons
     - milk:
         id: '260569996'
+    - mince beef:
+        id: '250871426'
+        aliases:
+            - minced beef
+            - mince
+    - minced pork:
+        id:
+    - moisturizing lotion:
+        id:
+    - mouthwash:
+        id:
+    - mozzarella:
+        id:
+    - mushrooms:
+        id:
+    - mustard:
+        id:
+    - napkins:
+        id:
+    - nectarine:
+        id:
+        aliases:
+            - nectarines
+    - new potatoes:
+        id: '266125635'
+    - oatmeal:
+        id:
+    - olive oil:
+        id:
+    - onions:
+        id:
+        aliases:
+            - onions
+    - oranges:
+        id:
+        aliases:
+            - orange
+    - orange juice:
+        id:
+    - oregano:
+        id:
+    - paprika:
+        id:
+    - paracetamol:
+        id:
+    - parmesan:
+        id:
+    - parsnip:
+        id:
+    - parsley:
+        id:
+    - pasta:
+        id:
+    - pasta sauce:
+        id:
+    - pastries:
+        id:
+    - peach:
+        id:
+    - peaches:
+        id:
+    - peanut butter:
+        id: '259433753'
+    - pear:
+        id:
+        aliases:
+            - pears
+    - penne:
+        id:
+    - peppers:
+        id:
+    - pesto:
+        id: '254879319'
+        aliases:
+            - green pesto
+    - pickles:
+        id:
+    - pimm's:
+        id:
+    - pita bread:
+        id:
+    - pizza:
+        id:
+    - plums:
+        id:
+        aliases:
+            - plum
+    - popcorn:
+        id:
+    - potatoes:
+        id:
+    - pretzels:
+        id:
+    - prosciutto:
+        id: '267533853'
+    - provolone:
+        id:
+    - raspberries:
+        id:
+    - razors:
+        id:
+    - red pepper:
+        id:
+    - red wine:
+        id:
+    - relish:
+        id:
+    - rice:
+        id:
+    - ricotta:
+        id:
+    - rolls:
+        id:
+    - rum:
+        id:
+    - saké:
+        id:
+    - salad:
+        id:
+    - salad dressing:
+        id:
+    - salsa:
+        id:
+    - salt:
+        id:
+    - salmon:
+        id: '288730236'
+        aliases:
+            - salmon fillets
+    - sandwich slices:
+        id:
+    - sausages:
+        id:
+    - scrubbers:
+        id:
+    - shampoo:
+        id:
+    - shaving cream:
+        id:
+    - sliced bread:
+        id:
+    - soap:
+        id:
+    - soda pop:
+        id:
+    - sorbet:
+        id:
+    - sour cream:
+        id:
+    - soy sauce:
+        id:
+    - spaghetti:
+        id: '254878424'
+    - spinach:
+        id: '282489773'
+    - sponges:
+        id:
+    - squash:
+        id:
+    - steak sauce:
+        id:
+    - strawberries:
+        id:
+    - sugar:
+        id:
+    - sun cream:
+        id:
+        aliases:
+            - sun tan lotion
+            - sunblock
+    - sunflower oil:
+        id: '254918228'
+    - supplements:
+        id:
+    - swiss cheese:
+        id:
+    - syrup:
+        id:
+    - tea:
+        id:
+    - tin foil:
+        id:
+    - toilet paper:
+        id:
+    - tomatoes:
+        id:
+    - tonic water:
+        id:
+    - toothpaste:
+        id:
+    - tortelloni:
+        id: '274737066'
+    - tortillas:
+        id: '261092202'
+        aliases:
+            - wraps
+    - tuna:
+        id:
+        aliases:
+            - canned tuna
+    - turkey:
+        id: '266507796'
+    - vanilla extract:
+        id:
+    - vegetable oil:
+        id:
+    - vinegar:
+        id:
+    - vitamins:
+        id:
+    - vodka:
+        id:
+    - washing up liquid:
+        id:
+    - water:
+        id:
+    - whipped cream:
+        id:
+    - whiskey:
+        id:
+    - white wine:
+        id:
+    - worcestershire sauce:
+        id:
+        aliases:
+            - worcester sauce
+    - yeast:
+        id:
+    - yogurt:
+        id:
+    - yoghurt cereal bars:
+        id: '271099738'
+    - yoghurt cereal bars:
+        id: '271099738'
+    - cinnamon cereal bars:
+        id: '289661673'
+    - apple and strawberry cereal bars:
+        id: '275504444'
+    - apple crumble cereal bars:
+        id: '285355149'
+    - granola cereal bars:
+        id: '268069030'
+    - vegetarian chicken dippers:
+        id: '250085585'
+        aliases:
+            - quorn chicken dippers
+            - fake chicken dippers
+    - vegetarian chicken pieces:
+        id: '266244436'
+        aliases:
+            - quorn chicken pieces
+            - fake chicken pieces
+    - vegetarian meatballs:
+        id: '277473303'
+    - vegetarian mince:
+        id: '257974340'
+    - lemon ice tea:
+        id: '253398763'
+    - peach ice tea:
+        id: '253398861'
+    - mens deodorant:
+        id: '272227552'
+        aliases:
+            - Roberto's deodorant
+    - womens deodorant:
+        id: '271327850'
+        aliases:
+            - Jenny's deodorant
