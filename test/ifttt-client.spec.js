@@ -27,7 +27,7 @@ describe('Item finder util', () => {
         const callback = sinon.spy();
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
-        this.iftttClient.addItemToBasket(ITEM_ID, undefined, callback);
+        this.iftttClient.addItemToBasketFromId(ITEM_ID, undefined, callback);
         expect(this.post).to.have.been.calledOnce.calledWith(URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
@@ -37,7 +37,7 @@ describe('Item finder util', () => {
         const callback = sinon.spy();
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
-        this.iftttClient.addItemToBasket(ITEM_ID, null, callback);
+        this.iftttClient.addItemToBasketFromId(ITEM_ID, null, callback);
         expect(this.post).to.have.been.calledOnce.calledWith(URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
@@ -47,7 +47,7 @@ describe('Item finder util', () => {
         const callback = sinon.spy();
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
-        this.iftttClient.addItemToBasket(ITEM_ID, 1, callback);
+        this.iftttClient.addItemToBasketFromId(ITEM_ID, 1, callback);
         expect(this.post).to.have.been.calledOnce.calledWith(URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
@@ -57,7 +57,7 @@ describe('Item finder util', () => {
         const callback = sinon.spy();
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
-        this.iftttClient.addItemToBasket(ITEM_ID, 3, callback);
+        this.iftttClient.addItemToBasketFromId(ITEM_ID, 3, callback);
         expect(this.post).to.have.been.calledThrice.calledWith(URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
