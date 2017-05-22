@@ -12,11 +12,15 @@ chai.use(sinonChai);
 
 const ITEM_ID = 'id';
 const URL = 'URL';
+const KEY = 'key';
 
-describe('Item finder util', () => {
+const ADD_URL = `${URL}/tesco_item/with/key/${KEY}`;
+const SEARCH_URL = `${URL}/tesco_search/with/key/${KEY}`;
+
+describe('Ifttt client', () => {
     beforeEach(() => {
         this.post = sinon.stub(request, 'post');
-        this.iftttClient = new IftttClient(URL, request);
+        this.iftttClient = new IftttClient(URL, KEY, request);
     });
 
     afterEach(() => {
@@ -28,7 +32,7 @@ describe('Item finder util', () => {
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
         this.iftttClient.addItemToBasketFromId(ITEM_ID, undefined, callback);
-        expect(this.post).to.have.been.calledOnce.calledWith(URL, expectedRequestBody);
+        expect(this.post).to.have.been.calledOnce.calledWith(ADD_URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
     });
@@ -38,7 +42,7 @@ describe('Item finder util', () => {
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
         this.iftttClient.addItemToBasketFromId(ITEM_ID, null, callback);
-        expect(this.post).to.have.been.calledOnce.calledWith(URL, expectedRequestBody);
+        expect(this.post).to.have.been.calledOnce.calledWith(ADD_URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
     });
@@ -48,7 +52,7 @@ describe('Item finder util', () => {
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
         this.iftttClient.addItemToBasketFromId(ITEM_ID, 1, callback);
-        expect(this.post).to.have.been.calledOnce.calledWith(URL, expectedRequestBody);
+        expect(this.post).to.have.been.calledOnce.calledWith(ADD_URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
     });
@@ -58,7 +62,7 @@ describe('Item finder util', () => {
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
         this.iftttClient.addItemToBasketFromId(ITEM_ID, 3, callback);
-        expect(this.post).to.have.been.calledThrice.calledWith(URL, expectedRequestBody);
+        expect(this.post).to.have.been.calledThrice.calledWith(ADD_URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
     });
