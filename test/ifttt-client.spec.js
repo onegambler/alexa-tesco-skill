@@ -32,7 +32,7 @@ describe('Ifttt client', () => {
         const callback = sinon.spy();
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
-        this.iftttClient.addItemToBasketFromId(ITEM_ID, undefined, callback);
+        this.iftttClient.addItemToBasket({ id: ITEM_ID, name: ITEM_NAME }, undefined, callback);
         expect(this.post).to.have.been.calledOnce.calledWith(ADD_URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
@@ -42,7 +42,7 @@ describe('Ifttt client', () => {
         const callback = sinon.spy();
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
-        this.iftttClient.addItemToBasketFromId(ITEM_ID, null, callback);
+        this.iftttClient.addItemToBasket({ id: ITEM_ID, name: ITEM_NAME }, null, callback);
         expect(this.post).to.have.been.calledOnce.calledWith(ADD_URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
@@ -52,7 +52,7 @@ describe('Ifttt client', () => {
         const callback = sinon.spy();
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
-        this.iftttClient.addItemToBasketFromId(ITEM_ID, 1, callback);
+        this.iftttClient.addItemToBasket({ id: ITEM_ID, name: ITEM_NAME }, 1, callback);
         expect(this.post).to.have.been.calledOnce.calledWith(ADD_URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
@@ -62,13 +62,13 @@ describe('Ifttt client', () => {
         const callback = sinon.spy();
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
-        this.iftttClient.addItemToBasketFromId(ITEM_ID, 3, callback);
+        this.iftttClient.addItemToBasket({ id: ITEM_ID, name: ITEM_NAME }, 3, callback);
         expect(this.post).to.have.been.calledThrice.calledWith(ADD_URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
     });
 
-    it('should search and add ONE item to the basket if id is undefined', (done) => {
+    it('should search by name and add ONE item to the basket if id is undefined', (done) => {
         const callback = sinon.spy();
         const expectedRequestBody = { json: true, body: { value1: ITEM_NAME } };
         this.post.callsArgWith(2, null, null, null);
