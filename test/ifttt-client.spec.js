@@ -11,6 +11,7 @@ const IftttClient = require('../lib/ifttt-client');
 chai.use(sinonChai);
 
 const ITEM_ID = 'id';
+const ITEM_NAME = 'banana';
 const URL = 'URL';
 const KEY = 'key';
 
@@ -63,6 +64,16 @@ describe('Ifttt client', () => {
         this.post.callsArgWith(2, null, null, null);
         this.iftttClient.addItemToBasketFromId(ITEM_ID, 3, callback);
         expect(this.post).to.have.been.calledThrice.calledWith(ADD_URL, expectedRequestBody);
+        expect(callback).to.have.been.calledOnce.calledWith(null);
+        done();
+    });
+
+    it('should search and add ONE item to the basket if id is undefined', (done) => {
+        const callback = sinon.spy();
+        const expectedRequestBody = { json: true, body: { value1: ITEM_NAME } };
+        this.post.callsArgWith(2, null, null, null);
+        this.iftttClient.addItemToBasket({ id: undefined, name: ITEM_NAME }, undefined, callback);
+        expect(this.post).to.have.been.calledOnce.calledWith(SEARCH_URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
     });
