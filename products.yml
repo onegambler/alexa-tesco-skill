@@ -249,13 +249,14 @@ products:
             - melons
     - milk:
         id: '260569996'
-    - mince beef:
+    - minced beef:
         id: '250871426'
         aliases:
-            - minced beef
-            - mince
+            - beef mince
     - minced pork:
         id:
+        aliases:
+            - pork mince
     - moisturizing lotion:
         id:
     - mouthwash:
