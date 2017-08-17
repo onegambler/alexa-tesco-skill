@@ -62,7 +62,7 @@ Status active
 ```
 Copy the `<KEY>` value and paste at the end of the Maker endpoint:
 ```
-https://maker.ifttt.com/trigger/tesco_item/with/key/<KEY>
+https://maker.ifttt.com/trigger/tesco_search/with/key/<KEY>
 ```
 Let's keep this somewhere as we will need to use it later.
 
