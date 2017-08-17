@@ -1,10 +1,10 @@
-#Alexa Tesco Skill
+# Alexa Tesco Skill
 
-##Description
+## Description
 Alexa Skill integration with Tesco. It allows to voice control the shopping on [Tesco Groceries](http://www.tesco.com/groceries/).
 It's possible to add products to the grocery basket by only using the voice.
 
-##Features
+## Features
 At the moment it only allows to add a product to the basket
 * Add one item to the Tesco Groceries basket
     * Alexa ask Tesco to add milk to the basket
@@ -13,7 +13,7 @@ At the moment it only allows to add a product to the basket
     * Alexa ask Tesco to add milk times three
     * Alexa ask Tesco to add some milk -> It will prompt you with a question on how many.
 
-##Requirements
+## Requirements
 * [NodeJs 6](https://nodejs.org/en/download/) and npm
 * An Amazon Echo/Dot
 * [An Amazon developer account](https://developer.amazon.com/)
@@ -21,20 +21,20 @@ At the moment it only allows to add a product to the basket
 * A [IFTTT](https://ifttt.com) account
 * A server to process the requests coming from the Echo. In this guide I will use AWS Lambda, so we need als [an Amazon AWS accout](https://aws.amazon.com)
 
-##High level integration
+## High level integration
 
 <p align="center">
   <img src="https://cloud.githubusercontent.com/assets/9900050/21467742/fb421984-c9ef-11e6-83b1-bf04210907b2.png" alt="Applet image"/>
 </p>
 
-##Installation
+## Installation
 
 Ok let's start by cloning this project: 
 ```
 git clone https://github.com/onegambler/alexa-tesco-skill.git
 ```
 
-###IFTTT
+### IFTTT
 Tesco doesn't provide public APIs for adding products to the grocery basket; luckily IFTTT has a Tesco integration which provides exactly what we are looking for. So, let's create an account with IFTTT (if you don't have one) and add an applet to do the job:
 
 * Click on `My Applets` and then `New applet`
@@ -172,11 +172,11 @@ Once you've setup your lambda, you'll need an [Amazon developer account](https:/
 
 More detailed instructions can be found at the following: [Steps to Create a Smart Home Skill](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/steps-to-create-a-smart-home-skill)
 
-#Putting everything together
+# Putting everything together
 Ok, almost there. As last step we need to deploy the file into AWS Lambda. The project comes with `node-aws-lambda`; a node utility used for Lambda's deployment. You can read more about it [here](https://www.npmjs.com/package/node-aws-lambda).
 I honestly prefer to do it manually so I don't have to deal with access keys and tokens; so let's go back to the newly created lambda - on the AWS console page - and let's upload the `dist.zip` file.
 Then click on `save` and we should be ready to go. Try to add some milk and see if it works!
 
-#Issues
+# Issues
 Here's are some issues you might face using the skill
 * *The item mapped is not available anymore*: Unfortunately I haven't found a way yet to know if an item becomes unavailable for a specific Tesco branch. IFTTT doesn't respond with errors in that case, so Alexa will say that everything went ok,even if the product is not added to the basket. Tesco as well doesn't provide APIs to get this kind of info. In my experience this happens mostly with seasonal fruit and vegetables and  it hasn't been a big issue for me so far. I'm still looking for a workaround.
