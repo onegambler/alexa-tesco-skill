@@ -21,11 +21,13 @@ function createAddItemIntent(item) {
 describe('Item finder util', () => {
     beforeEach(() => {
         this.getItemIdentifier = sinon.stub();
+        this.containsItem = sinon.stub();
         this.itemRepository = {
             getAllItems: function getAllItems() {
                 return ['banana', 'milk', 'pineapple', 'cereals'];
             },
-            getItemIdentifier: this.getItemIdentifier
+            getItemIdentifier: this.getItemIdentifier,
+            containsItem: this.containsItem
         };
         this.itemFinder = new ItemFinder(this.itemRepository);
         this.emitSpy = sinon.spy(this.itemFinder, 'emit');
@@ -37,6 +39,7 @@ describe('Item finder util', () => {
 
     it('should emit "found" if item is mapped to an existing SKILL_ID', (done) => {
         this.getItemIdentifier.withArgs('banana').returns('234');
+        this.containsItem.withArgs('banana').returns(true);
         this.itemFinder.process(createAddItemIntent('banana').slots);
         expect(this.emitSpy).to.have.been.calledOnce.calledWith('found',
             { id: '234', name: 'banana', quantity: null });
@@ -50,7 +53,7 @@ describe('Item finder util', () => {
     });
 
     it('should emit "not found" if item is not mapped and fuzzy search does not find a match', (done) => {
-        this.getItemIdentifier.withArgs('xxx').returns(null);
+        this.containsItem.withArgs('xxx').returns(null);
         this.itemFinder.process(createAddItemIntent('xxx').slots);
         expect(this.emitSpy).to.have.been.calledOnce.calledWith('notFound');
         done();
@@ -58,6 +61,7 @@ describe('Item finder util', () => {
 
     it('should emit "not found" if item is not mapped and fuzzy search does not find a match', (done) => {
         this.getItemIdentifier.withArgs('banana').returns('234');
+        this.containsItem.withArgs('banana').returns(true);
         this.itemFinder.process(createAddItemIntent('bannnnnnnnnnana').slots);
         expect(this.emitSpy).to.have.been.calledOnce.calledWith('fuzzyFound',
             { id: '234', name: 'banana', quantity: null });

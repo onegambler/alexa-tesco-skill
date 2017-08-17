@@ -57,7 +57,7 @@ gulp.task('node-mods', () => gulp.src('./package.json')
     .pipe(install({ production: true }))
 );
 
-gulp.task('zip', () => gulp.src(['dist/**/*', '!package.json'])
+gulp.task('zip', () => gulp.src(['dist/**', '!package.json'])
     .pipe(zip('dist.zip'))
     .pipe(gulp.dest('./'))
 );
