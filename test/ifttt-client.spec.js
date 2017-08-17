@@ -15,7 +15,6 @@ const ITEM_NAME = 'banana';
 const URL = 'URL';
 const KEY = 'key';
 
-const ADD_URL = `${URL}/tesco_item/with/key/${KEY}`;
 const SEARCH_URL = `${URL}/tesco_search/with/key/${KEY}`;
 
 describe('Ifttt client', () => {
@@ -33,7 +32,7 @@ describe('Ifttt client', () => {
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
         this.iftttClient.addItemToBasket({ id: ITEM_ID, name: ITEM_NAME }, undefined, callback);
-        expect(this.post).to.have.been.calledOnce.calledWith(ADD_URL, expectedRequestBody);
+        expect(this.post).to.have.been.calledOnce.calledWith(SEARCH_URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
     });
@@ -43,7 +42,7 @@ describe('Ifttt client', () => {
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
         this.iftttClient.addItemToBasket({ id: ITEM_ID, name: ITEM_NAME }, null, callback);
-        expect(this.post).to.have.been.calledOnce.calledWith(ADD_URL, expectedRequestBody);
+        expect(this.post).to.have.been.calledOnce.calledWith(SEARCH_URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
     });
@@ -53,7 +52,7 @@ describe('Ifttt client', () => {
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
         this.iftttClient.addItemToBasket({ id: ITEM_ID, name: ITEM_NAME }, 1, callback);
-        expect(this.post).to.have.been.calledOnce.calledWith(ADD_URL, expectedRequestBody);
+        expect(this.post).to.have.been.calledOnce.calledWith(SEARCH_URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
     });
@@ -63,7 +62,7 @@ describe('Ifttt client', () => {
         const expectedRequestBody = { json: true, body: { value1: ITEM_ID } };
         this.post.callsArgWith(2, null, null, null);
         this.iftttClient.addItemToBasket({ id: ITEM_ID, name: ITEM_NAME }, 3, callback);
-        expect(this.post).to.have.been.calledThrice.calledWith(ADD_URL, expectedRequestBody);
+        expect(this.post).to.have.been.calledThrice.calledWith(SEARCH_URL, expectedRequestBody);
         expect(callback).to.have.been.calledOnce.calledWith(null);
         done();
     });
