@@ -21,7 +21,7 @@ At the moment it only allows to add a product to the basket
 * A [IFTTT](https://ifttt.com) account
 * A server to process the requests coming from the Echo. In this guide I will use AWS Lambda, so we need als [an Amazon AWS accout](https://aws.amazon.com)
 
-##High level integration
+## High level integration
 
 <p align="center">
   <img src="https://cloud.githubusercontent.com/assets/9900050/21467742/fb421984-c9ef-11e6-83b1-bf04210907b2.png" alt="Applet image"/>
@@ -35,22 +35,22 @@ git clone https://github.com/onegambler/alexa-tesco-skill.git
 ```
 
 ### IFTTT
-Tesco doesn't provide public APIs for adding products to the grocery basket; luckily IFTTT has a Tesco integration which provide exactly what we are looking for. So, let's create an account with IFTTT (if you don't have one) and add an applet to do the job:
+Tesco doesn't provide public APIs for adding products to the grocery basket; luckily IFTTT has a Tesco integration which provides exactly what we are looking for. So, let's create an account with IFTTT (if you don't have one) and add an applet to do the job:
 
 * Click on `My Applets` and then `New applet`
 * Click on the blue `this` and search for `Maker`. 
     * Give permission to the service by clicking on `Connect` and then on `Receive a web request`
-    * As `Event Name` set `tesco_item`
+    * As `Event Name` set `tesco_search`
     * And click on `create trigger`
 * Click now on the blue `that` and search for `Tesco`
-    * Give permission to the service by clicking on `Connect`and then on `Add product to your basket`
-    * Write `{{Value1}}` as `ProductId`. It can be also done by clicking on `ingredients` and then `value1`
+    * Give permission to the service by clicking on `Connect`and then on `Search for and add product to basket`
+    * Write `{{Value1}}` in the `What to search for` field. It can be also done by clicking on `ingredients` and then `value1`
     * Finally click on `Create action` and then `Finish` 
 
 At the end you should have an applet that looks like this:
 
 <p align="center">
-  <img src="https://cloud.githubusercontent.com/assets/9900050/21463243/143ab56e-c95e-11e6-80f9-d6391bc62e66.png" alt="Applet image"/>
+  <img src="https://user-images.githubusercontent.com/9900050/29417946-cbad1f02-8362-11e7-8a0f-7c275c87b46d.png" alt="Applet image"/>
 </p>
 
 Once you have created the Applet, we need to copy the Maker URL. So navigate to the Maker webpage, [here](https://ifttt.com/maker), click on Settings and you will see the account info. Something like this:
@@ -62,13 +62,17 @@ Status active
 ```
 Copy the `<KEY>` value and paste at the end of the Maker endpoint:
 ```
-https://maker.ifttt.com/trigger/tesco_item/with/key/<KEY>
+https://maker.ifttt.com/trigger/tesco_search/with/key/<KEY>
 ```
 Let's keep this somewhere as we will need to use it later.
 
 ### Customising the products
-Now what we need to do is tell the skill which product we want to add to the basket when we say `milk`!
-So, in the project open `products.yml`. The file contains a mapping between an item and Tesco Item Id (IFTTT accepts only ids). This needs to be personalised according to your shopping. In order to do so, go to the Tesco Groceries web page and start getting all the item ids for the products you usually buy.
+Now what we need to do is tell the skill which products can be searched and added to the basket.
+So, in the project open the file `products.yml` which contains a list of the most common groceries. Alexa will only understand products contained in the list. You can add any product you want, as long as it can be found using the groceries search bar on Tesco.com. **All strings need to be lowercase!**
+Also it should be noted that the IFTTT action 
+> will search Tesco.com for products matching the search text, and add the first result to your basket.
+
+For this reason, if we want a more precise action and avoid to have the wrong item added, we can specify its id in the list. To do so, go to the Tesco Groceries web page and get the ids for the products you want.
 In each product page you can find the id in the url
 
 <p align="center">
@@ -78,7 +82,7 @@ In each product page you can find the id in the url
 ````
 http://www.tesco.com/groceries/product/details/?id=264245536
 ````
-In this case *264245536* and then add it to the `products.yml` list.
+In this case *264245536* and then add it to the `products.yml` as shown below.
 
 ```yaml
 products:
@@ -87,9 +91,16 @@ products:
         aliases:
             - bananas
     - cherry tomatoes:
-        id: '285212132'
     - milk:
         id: '260569996'
+```
+
+By specifying the product id, we can customise the list even further:
+```yaml
+    - mens deodorant:
+        id: '272227552'
+        aliases:
+            - Roberto's deodorant
 ```
 Once products are mapped, you can save and move to the next step.
 
