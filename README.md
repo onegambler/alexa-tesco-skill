@@ -67,12 +67,12 @@ https://maker.ifttt.com/trigger/tesco_search/with/key/<KEY>
 Let's keep this somewhere as we will need to use it later.
 
 ### Customising the products
-Now what we need to do is tell the skill which product we want to add to the basket when we say `milk`!
-So, in the project open `products.yml`. The file contains a list of a lot of most common groceries. Alexa will only understand products contained in the list. You can add any product you want, as long as it can be found using the groceries search bar on Tesco.com. **All strings need to be lowercase!**
+Now what we need to do is tell the skill which products can be searched and added to the basket.
+So, in the project open the file `products.yml` which contains a list of the most common groceries. Alexa will only understand products contained in the list. You can add any product you want, as long as it can be found using the groceries search bar on Tesco.com. **All strings need to be lowercase!**
 Also it should be noted that the IFTTT action 
 > will search Tesco.com for products matching the search text, and add the first result to your basket.
 
-I we want a more precise action and avoid to have the wrong item added, we can specify the id of the product in the list. To do so, go to the Tesco Groceries web page and get the ids for the products you want.
+For this reason, if we want a more precise action and avoid to have the wrong item added, we can specify its id in the list. To do so, go to the Tesco Groceries web page and get the ids for the products you want.
 In each product page you can find the id in the url
 
 <p align="center">
@@ -82,7 +82,7 @@ In each product page you can find the id in the url
 ````
 http://www.tesco.com/groceries/product/details/?id=264245536
 ````
-In this case *264245536* and then add it to the `products.yml` list.
+In this case *264245536* and then add it to the `products.yml` as shown below.
 
 ```yaml
 products:
