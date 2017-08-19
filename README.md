@@ -113,7 +113,7 @@ npm install
 ```
 to download all dependencies.
 
-The project comes with some `gulp` scripts to make the build process seasy. So let's install it globally
+The project comes with some `gulp` scripts to make the build process easy. So let's install it globally
 ```
 npm install -g gulp
 ```
@@ -161,8 +161,8 @@ Once you've setup your lambda, you'll need an [Amazon developer account](https:/
     
 2. Tab `Interaction Model`
     * Make sure you run the `gulp build` command since it will generate files from `products.yml` needed for the skill set up
-    * Paste the `dist/speechAssets/IntentSchema.json` file into the `Intent Schema` field
-    * Paste the `dist/speechAssets/SampleUtterances.txt`. file in the `Sample Utterances` field.
+    * Paste the content of `dist/speechAssets/IntentSchema.json` into the `Intent Schema` field
+    * Paste the content of `dist/speechAssets/SampleUtterances.txt` in the `Sample Utterances` field.
     * Create a `Custom Slot Type` called `GROCERY` and add the content of the file `dist/speechAsset/slot-types/GROCERY`. More info about custom slots can be found [here](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/defining-the-voice-interface#custom-slot-types).
 
 3. Tab `Configuration`
