@@ -38,7 +38,7 @@ git clone https://github.com/onegambler/alexa-tesco-skill.git
 Tesco doesn't provide public APIs for adding products to the grocery basket; luckily IFTTT has a Tesco integration which provides exactly what we are looking for. So, let's create an account with IFTTT (if you don't have one) and add an applet to do the job:
 
 * Click on `My Applets` and then `New applet`
-* Click on the blue `this` and search for `Maker`. 
+* Click on the blue `this` and search for `Webhooks`.
     * Give permission to the service by clicking on `Connect` and then on `Receive a web request`
     * As `Event Name` set `tesco_search`
     * And click on `create trigger`
