@@ -40,7 +40,7 @@ Tesco doesn't provide public APIs for adding products to the grocery basket; luc
 * Click on `My Applets` and then `New applet`
 * Click on the blue `this` and search for `Webhooks`.
     * Give permission to the service by clicking on `Connect` and then on `Receive a web request`
-    * As `Event Name` set `tesco_search`
+    * As `Event Name` set `tesco_search`. This *needs* to be the same!
     * And click on `create trigger`
 * Click now on the blue `that` and search for `Tesco`
     * Give permission to the service by clicking on `Connect`and then on `Search for and add product to basket`
@@ -60,11 +60,7 @@ Connected as ...
 URL https://maker.ifttt.com/use/<KEY>
 Status active
 ```
-Copy the `<KEY>` value and paste at the end of the Maker endpoint:
-```
-https://maker.ifttt.com/trigger/tesco_search/with/key/<KEY>
-```
-Let's keep this somewhere as we will need to use it later.
+Copy the `<KEY>` and keep this somewhere as we will need to use it later.
 
 ### Customising the products
 Now what we need to do is tell the skill which products can be searched and added to the basket.
@@ -148,7 +144,7 @@ So something like this
 
 In order to work properly Lambda needs some environment variables, in the `general` tab we need to add:
 * _APP_ID_: It's the lambda identification string, it's not a mandatory parameter, but it makes a little bit more secure by making your lambda only accept requests from your specific skill. It can be found in the Alexa Skill set up page.
-* _IFTTT_URL_: It's the IFTTT url we have saved before
+* _IFTTT_URL_: It's the IFTTT webhook url. It should be [https://maker.ifttt.com/trigger](https://maker.ifttt.com/trigger)
 * _IFTTT_KEY_: It's the IFTTT KEY saved before
 
 Remember to save the Lambda ARN value, found in the top right corner of the dialog, we will need it later.
