@@ -38,7 +38,7 @@ git clone https://github.com/onegambler/alexa-tesco-skill.git
 Tesco doesn't provide public APIs for adding products to the grocery basket; luckily IFTTT has a Tesco integration which provides exactly what we are looking for. So, let's create an account with IFTTT (if you don't have one) and add an applet to do the job:
 
 * Click on `My Applets` and then `New applet`
-* Click on the blue `this` and search for `Maker`. 
+* Click on the blue `this` and search for `Webhooks`.
     * Give permission to the service by clicking on `Connect` and then on `Receive a web request`
     * As `Event Name` set `tesco_search`
     * And click on `create trigger`
@@ -113,7 +113,7 @@ npm install
 ```
 to download all dependencies.
 
-The project comes with some `gulp` scripts to make the build process seasy. So let's install it globally
+The project comes with some `gulp` scripts to make the build process easy. So let's install it globally
 ```
 npm install -g gulp
 ```
@@ -161,8 +161,8 @@ Once you've setup your lambda, you'll need an [Amazon developer account](https:/
     
 2. Tab `Interaction Model`
     * Make sure you run the `gulp build` command since it will generate files from `products.yml` needed for the skill set up
-    * Paste the `dist/speechAssets/IntentSchema.json` file into the `Intent Schema` field
-    * Paste the `dist/speechAssets/SampleUtterances.txt`. file in the `Sample Utterances` field.
+    * Paste the content of `dist/speechAssets/IntentSchema.json` into the `Intent Schema` field
+    * Paste the content of `dist/speechAssets/SampleUtterances.txt` in the `Sample Utterances` field.
     * Create a `Custom Slot Type` called `GROCERY` and add the content of the file `dist/speechAsset/slot-types/GROCERY`. More info about custom slots can be found [here](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/defining-the-voice-interface#custom-slot-types).
 
 3. Tab `Configuration`
