@@ -18,7 +18,6 @@ const { ALEXA_INTENT,
 chai.use(sinonChai);
 
 const SKILL_ID = 'amzn1.echo-sdk-ams.app.12345';
-const URL = 'URL';
 
 describe('Initializing the abstract AlexaSkill class', () => {
     let alexaSkill;

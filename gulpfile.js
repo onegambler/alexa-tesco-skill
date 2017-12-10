@@ -94,10 +94,10 @@ function parseProductsFile(file, contentExtractor, callback) {
     for (let i = 0; i < json.products.length; i++) {
         const product = json.products[i];
         Object.keys(product).forEach((key) => {
-            dest[key] = product[key].id;
+            dest[key.toLowerCase()] = product[key].id;
             if (Array.isArray(product[key].aliases)) {
                 product[key].aliases.forEach((alias) => {
-                    dest[alias] = product[key].id;
+                    dest[alias.toLowerCase()] = product[key].id;
                 });
             }
         });
