@@ -148,7 +148,8 @@ So something like this
 
 In order to work properly Lambda needs some environment variables, in the `general` tab we need to add:
 * _APP_ID_: It's the lambda identification string, it's not a mandatory parameter, but it makes a little bit more secure by making your lambda only accept requests from your specific skill. It can be found in the Alexa Skill set up page.
-* _TRIGGER_URL_: It's the IFTTT url we have saved before
+* _IFTTT_URL_: It's the IFTTT url we have saved before
+* _IFTTT_KEY_: It's the IFTTT KEY saved before
 
 Remember to save the Lambda ARN value, found in the top right corner of the dialog, we will need it later.
 
@@ -157,7 +158,7 @@ Once you've setup your lambda, you'll need an [Amazon developer account](https:/
 
 1. Tab `Skill Information` 
     * Add `Name` and `Invocation Name`. Be aware that the second is the name you are going to use to activate the skill. I use `Tesco`, so I can say "Alexa ask Tesco.." but it's completely up to you.
-    * Click no on `Audio Player`
+    * Click `no` on `Audio Player`
     
 2. Tab `Interaction Model`
     * Make sure you run the `gulp build` command since it will generate files from `products.yml` needed for the skill set up
