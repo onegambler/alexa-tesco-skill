@@ -1,5 +1,5 @@
 QuantityNumber {quantity}
-ddItem add {item} times {quantity}
+AddItem add {item} times {quantity}
 AddItem add {item}
 AddItem to add {item}
 AddItem add {item} to the basket

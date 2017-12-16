@@ -137,6 +137,8 @@ products:
         id:
     - cucumbers:
         id:
+    - curry:
+        id:
     - deodorant:
         id:
     - dishwasher powder:
@@ -191,6 +193,8 @@ products:
             - thay green curry
             - thai green curry paste
             - green curry paste
+    - green beans:
+        id:
     - hair gel:
         id:
     - hair spray:
