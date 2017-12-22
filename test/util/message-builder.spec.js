@@ -46,5 +46,27 @@ describe('Message builder', () => {
         expect(message).to.deep.equal('I am not sure what you mean by that');
         done();
     });
+
+    it('should build try anyway question with item and no quantity', (done) => {
+        const item = 'banana';
+        const quantity = null;
+        const message = messageBuilder.buildTryAnywayQuestion(item, quantity);
+        expect(message.speechOutput)
+            .to.deep.equal(`I didn\'t recognise the product. Do you still want me to add ${item} to the basket?`);
+        expect(message.repromptSpeech)
+            .to.deep.equal(`Do you want to add ${item}?`);
+        done();
+    });
+
+    it('should build try anyway question with item and quantity', (done) => {
+        const item = 'banana';
+        const quantity = 4;
+        const message = messageBuilder.buildTryAnywayQuestion(item, quantity);
+        expect(message.speechOutput).to.deep
+            .equal(`I didn\'t recognise the product. Do you still want me to add ${quantity} ${item} to the basket?`);
+        expect(message.repromptSpeech)
+            .to.deep.equal(`Do you want to add ${item}?`);
+        done();
+    });
 });
 

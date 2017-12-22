@@ -60,12 +60,13 @@ describe('Item finder util', () => {
     });
 
     it('should emit "fuzzyFound" if item is not mapped and fuzzy search finds a match', (done) => {
-        this.getItemIdentifier.withArgs('banana').returns('234');
-        this.containsItem.withArgs('banana').returns(true);
-        this.itemFinder.process(createAddItemIntent('bannana').slots);
-        this.itemFinder.process(createAddItemIntent('bannana').slots);
-        expect(this.emitSpy).to.have.been.calledOnce.calledWith('fuzzyFound',
-            { id: '234', name: 'banana', quantity: null });
+        const captureName = 'bannana';
+        const expectedName = 'banana';
+        this.getItemIdentifier.withArgs(expectedName).returns('234');
+        this.containsItem.withArgs(expectedName).returns(true);
+        this.itemFinder.process(createAddItemIntent(captureName).slots);
+        expect(this.emitSpy).to.have.been.calledOnce.calledWith('fuzzyFound', captureName,
+            { id: '234', name: expectedName, quantity: null });
         done();
     });
 });
