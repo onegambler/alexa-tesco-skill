@@ -51,10 +51,8 @@ describe('Message builder', () => {
         const item = 'banana';
         const quantity = null;
         const message = messageBuilder.buildTryAnywayQuestion(item, quantity);
-        expect(message.speechOutput)
+        expect(message)
             .to.deep.equal(`I didn\'t recognise the product. Do you still want me to add ${item} to the basket?`);
-        expect(message.repromptSpeech)
-            .to.deep.equal(`Do you want to add ${item}?`);
         done();
     });
 
@@ -62,10 +60,8 @@ describe('Message builder', () => {
         const item = 'banana';
         const quantity = 4;
         const message = messageBuilder.buildTryAnywayQuestion(item, quantity);
-        expect(message.speechOutput).to.deep
+        expect(message).to.deep
             .equal(`I didn\'t recognise the product. Do you still want me to add ${quantity} ${item} to the basket?`);
-        expect(message.repromptSpeech)
-            .to.deep.equal(`Do you want to add ${item}?`);
         done();
     });
 });
