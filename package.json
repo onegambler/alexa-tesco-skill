@@ -18,9 +18,9 @@
     "coverage": "istanbul cover _mocha test/*"
   },
   "dependencies": {
-    "async": "^2.1.4",
-    "fuse.js": "^2.6.1",
-    "request": "2.79.0"
+    "async": "2.3.0",
+    "fuse.js": "3.2.0",
+    "request": "2.83.0"
   },
   "devDependencies": {
     "chai": "^3.4.1",

@@ -63,8 +63,8 @@ Status active
 Copy the `<KEY>` and keep this somewhere as we will need to use it later.
 
 ### Customising the products
-Now what we need to do is tell the skill which products can be searched and added to the basket.
-So, in the project open the file `products.yml` which contains a list of the most common groceries. Alexa will only understand products contained in the list. You can add any product you want, as long as it can be found using the groceries search bar on Tesco.com. **All strings need to be lowercase!**
+Now we need to let the skill know which products can be searched and added to the basket.
+In the project, open the file `products.yml`. It contains a list of the most common groceries. Alexa will only understand products contained in the list. You can add any product you want, as long as it can be found using the groceries search bar on Tesco.com.
 Also it should be noted that the IFTTT action 
 > will search Tesco.com for products matching the search text, and add the first result to your basket.
 

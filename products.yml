@@ -21,8 +21,15 @@ products:
             - avocados
     - bacon:
         id:
+    - baguette:
+        id:
     - baking powder:
         id:
+    - baking paper:
+        id:
+        aliases:
+            - greaseproof paper
+            - non-stick baking paper
     - baking soda:
         id:
     - banana:
@@ -53,11 +60,15 @@ products:
         id:
     - bleu cheese:
         id:
+    - bran flakes:
+        id:
     - blueberries:
         id:
     - bread:
         id: '279505857'
     - bread crumbs:
+        id:
+    - brie:
         id:
     - broccoli:
         id:
@@ -93,10 +104,14 @@ products:
         id: '285212132'
         aliases:
             - cherry tomato
+    - chestnut mushrooms:
+        id:
     - chewing gum:
         id:
     - chicken:
         id: '292285280'
+    - chicken breasts:
+        id:
     - chocolate chips:
         id:
     - cilantro:
@@ -136,6 +151,8 @@ products:
     - croissants:
         id:
     - cucumbers:
+        id:
+    - curry:
         id:
     - deodorant:
         id:
@@ -191,6 +208,8 @@ products:
             - thay green curry
             - thai green curry paste
             - green curry paste
+    - green beans:
+        id:
     - hair gel:
         id:
     - hair spray:
@@ -301,6 +320,8 @@ products:
         id:
     - parsley:
         id:
+    - passata:
+        id:
     - pasta:
         id:
     - pasta sauce:
@@ -339,12 +360,16 @@ products:
             - plum
     - popcorn:
         id:
+    - porridge:
+        id:
     - potatoes:
         id:
     - pretzels:
         id:
     - prosciutto:
         id: '267533853'
+    - prosecco:
+        id:
     - provolone:
         id:
     - raspberries:
@@ -391,6 +416,8 @@ products:
         id:
     - sliced bread:
         id:
+    - smoked salmon:
+        id:
     - soap:
         id:
     - soda pop:
@@ -431,6 +458,8 @@ products:
     - tea:
         id:
     - tin foil:
+        id:
+    - tofu:
         id:
     - toilet paper:
         id:
